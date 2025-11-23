@@ -26,11 +26,15 @@ public class Product {
     @Column(name = "discounted_price")
     private String discountedPrice;
 
-    private String quantity;
+    private int quantity;
 
     private String brand;
 
     private String color;
+
+
+
+    private String discountPresent;
 
     @Embedded
     @ElementCollection
@@ -95,12 +99,19 @@ public class Product {
         this.discountedPrice = discountedPrice;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+    public String getDiscountPresent() {
+        return discountPresent;
+    }
+
+    public void setDiscountPresent(String discountPresent) {
+        this.discountPresent = discountPresent;
     }
 
     public String getBrand() {
@@ -175,7 +186,7 @@ public class Product {
         this.createdAt = createdAt;
     }
 
-    public Product(Long id, String title, String description, String price, String discountedPrice, String quantity, String brand, String color, Set<Size> sizes, String imageUrl, List<Rating> ratings, List<Review> reviews, String numRatings, Category category, LocalDateTime createdAt) {
+    public Product(Long id, String title, String description, String price, String discountedPrice, int quantity, String brand, String color, Set<Size> sizes, String imageUrl, List<Rating> ratings, List<Review> reviews, String numRatings, Category category, LocalDateTime createdAt) {
         this.id = id;
         this.title = title;
         this.description = description;
